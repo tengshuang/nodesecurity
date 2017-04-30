@@ -1,0 +1,33 @@
+.demo(ng-controller='createNewGroupCtrl')
+  div(layout='row', layout-wrap='', flex = '')
+    md-toolbar
+     .md-toolbar-tools
+       md-button(aria-label='Go Back',ng-click='closeCreate()')
+         | Cancel
+       md-truncate(style='text-align: center;',flex = '')
+         ng-md-icon(icon="group_add" size="33")
+       md-button(aria-label='Confirm',ng-click='postPrivateDir()', ng-disabled="!groupname")
+         | create
+    .md-padding(flex='100', layout='column')
+      md-input-container(style="margin-top:0px;margin-bottom: 0px;height: 38px;")
+        label GroupName
+        input(type='text', ng-model='groupname')
+      div(layout='column', layout-wrap='', flex='',style="height: 25px;")
+        md-checkbox(aria-label='Select All', ng-checked='isChecked()', md-indeterminate='isIndeterminate()', ng-click='toggleAll()')
+          span(ng-if='isChecked()') Un-
+          | Select All
+      md-content(layout-padding='',layout='row' )
+        md-list
+          md-list-item.md-3-line(ng-repeat='item in items', ng-click='null')
+            md-checkbox(ng-checked='exists(item, selected)', ng-click='toggle(item, selected)',style="margin-bottom: 10px;")
+            span.avatarWrap
+              canvas(id='CanvasRight_{{$index}}', width='30', height='30', data-jdenticon-hash='{{item.photo}}')
+            .md-list-item-text
+              h3 {{item.what}}
+              md-button.btn1(md-colors="{background: 'grey'}", ng-if='item.who == 0') Offline
+              md-button.btn1(md-colors="{background: 'green'}", ng-if='item.who == 1') Online
+              md-button.btn1(md-colors="{background: 'blue'}", ng-if='item.status == 0') Undefined
+              md-button.btn1(md-colors="{background: 'green'}", ng-if='item.status == 1') ok
+              md-button.btn1(md-colors="{background: 'orange'}", ng-if='item.status == 2') help
+              md-button.btn1(md-colors="{background: 'red'}", ng-if='item.status == 3') emergency
+              p {{item.notes}}

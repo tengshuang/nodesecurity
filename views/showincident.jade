@@ -1,0 +1,14 @@
+div(style="height:100%" flex = '' layout = "column")
+    md-content(flex="",style="height:100%;" id="mdContent")
+        md-list
+            md-list-item.md-3-line(ng-repeat="item in IncidentList" layout="row" ng-cloak)
+                md-card(md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}", md-theme-watch='' flex='')
+                    md-button(ng-click = "changeIncidentStatus($event, $index)")
+                        h5(style="text-align: left; text-transform: none; margin-bottom :0px; margin-top :0px" ) {{item.date | date:'MM/dd/yyyy h:mm:ss'}}
+                        div(style="text-align: left; text-transform: none;") incident type: {{ item.type}}
+                        div(style="text-align: left; text-transform: none;") incident location: {{item.location}}
+                        div(style="text-align: left; text-transform: none;") incident severity:{{item.severity}}
+                        div(style="text-align: left; text-transform: none;") people injured: {{item.number}}
+                        div(style="text-align: left; text-transform: none;") status: {{item.status}}
+                        div(layout = "column")
+

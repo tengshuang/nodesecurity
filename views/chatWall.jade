@@ -1,0 +1,39 @@
+//
+   Created by wdy on 02/03/2017.
+
+div(style="height:100%" flex = '' layout = "column")
+    md-content(flex="",style="height:100%;" id="mdContent")
+        md-list
+            md-list-item.md-3-line(ng-repeat="item in MessageList" layout="row" ng-cloak)
+                div(layout = "row" ng-if="item.left" flex="90" style="padding-left: 30px")
+                    span.avatarWrap
+                        canvas(id="Canvas_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}") Fallback text for browsers not supporting canvas
+                    .chat-bubble.left
+                        .message-detail
+                            div(layout="row")
+                                md-button.md-fab.btn2(aria-label='showStatusLabel',style="width:8px;height:10px" md-colors="{background: '{{item.statusColor}}'}")
+                                span.bold.md-caption.btn4 {{item.name}}
+                                md-button.btn2(ng-if="locationExist(item.location)" style="margin-top: 0px;" aria-label = "location" ng-click = "showLocation(item.location)")
+                                    ng-md-icon(icon="location_on" style="fill: red")
+                            span.md-caption.btn3 {{item.date | date:'MM/dd/yyyy h:mm:ss'}}
+                        .message(autolinker="") {{item.txt}}
+                div(flex="")
+                div(layout = "row" ng-if="!item.left" flex="90")
+                    div(flex-xs="85" flex-gt-xs="90")
+                        .chat-bubble.right
+                            .message-detail
+                                div(layout="row")
+                                    md-button.md-fab.btn2(aria-label='showStatusLabel',style="width:8px;height:10px" md-colors="{background: '{{item.statusColor}}'}")
+                                    md-button.btn1(ng-if="locationExist(item.location)" style="margin-top: 0px;" aria-label = "location" ng-click = "showLocation(item.location)")
+                                        ng-md-icon(icon="location_on" style="fill: red")
+                                    span.bold.md-caption.btn4 {{item.name}}
+                                span.md-caption.btn3 {{item.date | date:'MM/dd/yyyy h:mm:ss'}}
+                            .message(autolinkDirective="") {{item.txt }}
+                    span.avatarWrap
+                        canvas(id="Canvas_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}")
+    md-divider
+    div(layout="row" style="height:50px")
+        md-input-container.inputMessage(flex="")
+            input(ng-model="$parent.inputMsg" ng-keypress="$event.keyCode == 13  && sendMessage(inputMsg)")
+        md-button.md-primary.md-raised.sendButton(aria-label="send"  ng-click="sendMessage(inputMsg)" ng-disabled="!$parent.inputMsg")
+            ng-md-icon(icon="send")

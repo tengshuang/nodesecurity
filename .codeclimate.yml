@@ -1,0 +1,35 @@
+---
+engines:
+  csslint:
+    enabled: true
+  nodesecurity:
+    enabled: true
+  requiresafe:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
+          mass_threshold: 80
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.css"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
+exclude_paths: 
+  - "ESN/test/"
+  - "ESN/public/"
+  - "docs/"
+  - "ESN/backend/route.js"
+
+  

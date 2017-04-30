@@ -1,0 +1,16 @@
+div(style="height:100%")
+  div(layout="column" layout-align="center center" layout-fill)
+    div(class="md-whiteframe-z1")
+      md-toolbar
+        h2( class="md-toolbar-tools" id="loginBox")
+          span ESN Log In
+      md-content(class="md-padding", layout="column")
+        md-input-container
+          label Name
+          input(id="username" type="text" ng-model="username")
+        md-input-container
+          label Password
+          input(id="password" type="password" ng-model="password" )
+        div(layout="row" layout-align="center center")
+          md-button(id="login" class="md-raised md-primary" ng-click="logIn($event)") Login
+          div(flex)

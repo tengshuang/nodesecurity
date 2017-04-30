@@ -1,0 +1,280 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.hide-validation-error .md-errors-spacer { display: none; }
+
+.undefined{
+  background: blue;
+}
+
+.ok{
+  background: green;
+}
+
+.help{
+  background: orange;
+}
+
+.createPerson{
+  margin-bottom: 2px;
+  margin-top: 10px;
+  height: 35px;
+}
+.emergency{
+  background: red;
+}
+
+.bulletinPhoto{
+  margin-right: 15px;
+}
+.posterHead {
+  font-family: verdana;
+  color: red;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+  font-size: 55px;
+}
+
+.posterDetail{
+  margin-left:5px;
+  font-weight: bold;
+  color: red;
+  font-size: 10px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.posterContact{
+  font-weight: bold;
+  color: red;
+  margin-top:5px;
+  font-size: 15px;
+}
+
+.postFooter{
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+.posterInfo{
+  margin-left: 10px;
+  font-family: serif;
+  font-style: italic;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.posterContactInfo{
+  margin-left: 10px;
+  margin-top:5px;
+  font-family: serif;
+  font-style: italic;
+  font-weight: bold;
+}
+.posterSubHead{
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size:16px;
+}
+.capitalize{
+  text-transform:capitalize;
+}
+.sendButton{
+  height: 40px;
+  margin-top: 3px;
+  min-width: 40px
+}
+
+.expandMoreButton{
+  min-width: 100%;
+  background-color: #deebff;
+}
+
+.inputMessage{
+  margin-top: 6px
+}
+
+.btn1 {
+  font-size: 10px;
+  min-height: 5px;
+  font-weight: bold;
+  min-width: 5px;
+  margin-left: 0px;
+  margin-right:3px;
+  height:25px;
+  margin-top:8px;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  padding-right:2px;
+  line-height: 0px;
+}
+
+.btn5 {
+  border-radius: 10px;
+}
+
+.btn5 span {
+  font-size: 13px;
+}
+
+.btn2 {
+  font-size: 10px;
+  min-height: 5px;
+  font-weight: bold;
+  min-width: 5px;
+  margin-left: 0px;
+  margin-right: 5px;
+  height:25px;
+  margin-top:8px;
+  margin-bottom: 4px;
+  padding-left: 2px;
+  padding-right:2px;
+  line-height: 0px;
+}
+
+.btn3 {
+  font-size:8px;
+}
+
+.btn4{
+  padding-top: 5px;
+}
+
+#loginBox {
+	width: 20%; 
+	min-width: 250px;
+}
+
+.chat-bubble {
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  position: relative;
+  margin: 10px;
+  max-width: 80%;
+}
+
+.chat-bubble:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  bottom: -7.5px;
+}
+
+.chat-bubble.left {
+  background-color: rgb(186, 218, 255);
+  float: left;
+  margin-left: 2px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.chat-bubble.left:before {
+  background-color: rgb(186, 218, 255);
+  left: 10px;
+  -webkit-transform: rotate(70deg) skew(5deg);
+}
+
+.chat-bubble.right {
+  background-color: rgb(9, 125, 217);
+  color: #fff;
+  float: right;
+  margin-right: 2px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.chat-bubble.right:before {
+  background-color:rgb(9, 125, 217);
+  right: 10px;
+  -webkit-transform: rotate(118deg) skew(-5deg);
+}
+
+.chat-bubble.right a.autolinker {
+  color: #fff;
+  font-weight: bold;
+}
+
+.chat-bubble .message {
+  word-wrap: break-word; 
+}
+
+.user-messages-top-icon {
+  font-size: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+  right: 5px;
+}
+
+.msg-header-username {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+
+input, textarea, .item-input, .item-input-wrapper {
+  background-color: #f4f4f4 !important;
+}
+.bold {
+  font-weight: bold;
+}
+
+.cf {
+  clear: both !important;
+}
+
+a.autolinker {
+  color: #3b88c3;
+  text-decoration: none;
+}
+
+
+.loader .ion-loading-c {
+  font-size: 64px;
+}
+
+.avatarWrap {
+  width: 50px;
+  padding-top: 20px;
+}
+
+.focus{background-color:#ccc}
+
+b.ball {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 3px auto 0;
+  background-color: #ff0000;
+  border-radius: 50%;
+  box-shadow: inset -2.5px -2.5px 4px rgba(0,0,0,.5);
+  background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+  background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+  background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+  background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+}
+
+.announcementItem {
+  padding: 10px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.announcementItem p {
+  color: #555;
+}

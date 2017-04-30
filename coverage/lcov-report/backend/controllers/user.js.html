@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backend/controllers/user.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">backend/controllers/</a> user.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/89</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">var userModel = require('../models/user');
+var directoryModel = require('../models/directory');
+var utils = require('../utils');
+var instant = require('../io');
+var dirControl = require('./directory');
+var globalVal = require("../global");
+var typeService = utils.typeService;
+&nbsp;
+var userCtrl = {};
+&nbsp;
+userCtrl.login = <span class="fstat-no" title="function not covered" >function(name, pass, callback) {</span>
+<span class="cstat-no" title="statement not covered" >	var newUser = {name: name, passwd: pass};</span>
+<span class="cstat-no" title="statement not covered" >	userModel.findUser(newUser, <span class="fstat-no" title="function not covered" >function(code, result){</span></span>
+<span class="cstat-no" title="statement not covered" >		if (code == globalVal.success){</span>
+<span class="cstat-no" title="statement not covered" >			userModel.createToken(result, <span class="fstat-no" title="function not covered" >function(result_code, user){</span></span>
+<span class="cstat-no" title="statement not covered" >                userModel.formateUser(user,<span class="fstat-no" title="function not covered" >function (ret) {</span></span>
+<span class="cstat-no" title="statement not covered" >					callback(ret);</span>
+                });
+			});
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({Error:{code:code}});</span>
+	});
+};
+&nbsp;
+&nbsp;
+userCtrl.logout = <span class="fstat-no" title="function not covered" >function(token, callback){</span>
+<span class="cstat-no" title="statement not covered" >	userModel.setLogoutStatus(token, <span class="fstat-no" title="function not covered" >function(user){</span></span>
+<span class="cstat-no" title="statement not covered" >		if (user){</span>
+<span class="cstat-no" title="statement not covered" >            instant.logout(user._id);</span>
+<span class="cstat-no" title="statement not covered" >			callback({ Result: {code: globalVal.success}});</span>
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({ Error: {code:globalVal.unauthorized}});</span>
+	});
+};
+&nbsp;
+&nbsp;
+userCtrl.logoutByName = <span class="fstat-no" title="function not covered" >function(name, callback){</span>
+<span class="cstat-no" title="statement not covered" >	userModel.setLogoutByName(name, <span class="fstat-no" title="function not covered" >function(code){</span></span>
+<span class="cstat-no" title="statement not covered" >		if (code == globalVal.success) <span class="cstat-no" title="statement not covered" >callback({Result: {code: globalVal.success}});</span></span>
+		else <span class="cstat-no" title="statement not covered" >callback({Error: {code: globalVal.unauthorized}});</span>
+	});
+};
+&nbsp;
+&nbsp;
+userCtrl.signup = <span class="fstat-no" title="function not covered" >function(name, pass,photo, callback){</span>
+<span class="cstat-no" title="statement not covered" >	var newUser = {name: name, passwd: pass, photo: photo, directories: []};</span>
+<span class="cstat-no" title="statement not covered" >	userModel.findUser(newUser, <span class="fstat-no" title="function not covered" >function(ret_code,result){</span></span>
+<span class="cstat-no" title="statement not covered" >		directoryModel.initializeDir(<span class="fstat-no" title="function not covered" >function(dir,announcementdir) {</span></span>
+<span class="cstat-no" title="statement not covered" >            userModel.notificationDirectory(newUser,dir,announcementdir,<span class="fstat-no" title="function not covered" >function (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >                userModel.createUser(res, <span class="fstat-no" title="function not covered" >function(user){</span></span>
+<span class="cstat-no" title="statement not covered" >                    directoryModel.addUser({_id: dir._id},user,<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >                        directoryModel.addUser({_id:announcementdir._id}, user, <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >                            userModel.formateUser(user,<span class="fstat-no" title="function not covered" >function (ret) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                callback(ret);</span>
+                            });
+                        });
+                    });
+                });
+            });
+		});
+	});
+};
+&nbsp;
+userCtrl.getUsersByDirId = <span class="fstat-no" title="function not covered" >function(token, dirId, callback){</span>
+<span class="cstat-no" title="statement not covered" >	userModel.getDirectory(token, <span class="fstat-no" title="function not covered" >function(result){</span></span>
+<span class="cstat-no" title="statement not covered" >		if(result){</span>
+<span class="cstat-no" title="statement not covered" >			var flag = false;</span>
+<span class="cstat-no" title="statement not covered" >			for(var i = 0; i &lt; result.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >				if(dirId == result[i].dirInfo._id){</span>
+<span class="cstat-no" title="statement not covered" >					flag = true;</span>
+<span class="cstat-no" title="statement not covered" >					directoryModel.getUser(dirId, <span class="fstat-no" title="function not covered" >function(ret_code, ret_result){</span></span>
+<span class="cstat-no" title="statement not covered" >						userModel.formatUserLists(ret_result,<span class="fstat-no" title="function not covered" >function (userList) {</span></span>
+<span class="cstat-no" title="statement not covered" >							callback(userList);</span>
+						});
+<span class="cstat-no" title="statement not covered" >						return;</span>
+					});
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			if(!flag) <span class="cstat-no" title="statement not covered" >callback({Error: {code: globalVal.notfound}});</span></span>
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({Error:{code: globalVal.unauthorized}});</span>
+	});
+&nbsp;
+};
+&nbsp;
+userCtrl.searchForUserLists = <span class="fstat-no" title="function not covered" >function (type,content,callback) {</span>
+<span class="cstat-no" title="statement not covered" >    typeService.isValid(type,content,<span class="fstat-no" title="function not covered" >function (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(res){</span>
+<span class="cstat-no" title="statement not covered" >            userModel.getUsersLists(type,content,<span class="fstat-no" title="function not covered" >function(userLists) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if(userLists) {</span>
+<span class="cstat-no" title="statement not covered" >                    userModel.sortUsers(userLists,<span class="fstat-no" title="function not covered" >function (users) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        userModel.formatUserLists(users,<span class="fstat-no" title="function not covered" >function (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            callback(res);</span>
+                        });
+                    });
+                }
+                else <span class="cstat-no" title="statement not covered" >callback({Error:{code: globalVal.notfound}});</span>
+            });
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({Error:{code: globalVal.notfound}});</span>
+    });
+};
+&nbsp;
+userCtrl.setStatus = <span class="fstat-no" title="function not covered" >function(token, location, status,callback){</span>
+<span class="cstat-no" title="statement not covered" >	userInfo = {};</span>
+<span class="cstat-no" title="statement not covered" >	if (location) <span class="cstat-no" title="statement not covered" >userInfo['location'] = location;</span></span>
+<span class="cstat-no" title="statement not covered" >	if(status) <span class="cstat-no" title="statement not covered" >userInfo['status'] = status;</span></span>
+	// update status
+<span class="cstat-no" title="statement not covered" >	userModel.updateInfo({token:token},userInfo, <span class="fstat-no" title="function not covered" >function(user){</span></span>
+<span class="cstat-no" title="statement not covered" >		if(user) {</span>
+<span class="cstat-no" title="statement not covered" >            instant.newUserStatus(user._id);</span>
+<span class="cstat-no" title="statement not covered" >            callback({Users: {name: user.name, token: user.token, location: user.location, status: user.status}});</span>
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({Error:{code: globalVal.unauthorized}});</span>
+	});
+};
+&nbsp;
+// set directory to bread
+userCtrl.setDirectoryStatus = <span class="fstat-no" title="function not covered" >function(token, dirId,callback) {</span>
+<span class="cstat-no" title="statement not covered" >	userModel.validate({token:token}, <span class="fstat-no" title="function not covered" >function(user) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(user){</span>
+<span class="cstat-no" title="statement not covered" >			dirInfo = user.directories;</span>
+<span class="cstat-no" title="statement not covered" >			var flag = false;</span>
+<span class="cstat-no" title="statement not covered" >			for(var i = 0; i &lt; dirInfo.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >				if(dirInfo[i].dirInfo == dirId){</span>
+<span class="cstat-no" title="statement not covered" >					dirInfo[i].bread = true;</span>
+<span class="cstat-no" title="statement not covered" >					flag = true;</span>
+<span class="cstat-no" title="statement not covered" >					break;</span>
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			if(!flag){</span>
+<span class="cstat-no" title="statement not covered" >                callback({Error:{code: globalVal.notfound}});</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			userModel.updateInfo({token:token}, {directories: dirInfo}, <span class="fstat-no" title="function not covered" >function(user){</span></span>
+<span class="cstat-no" title="statement not covered" >				dirControl.getDirectory(token, <span class="fstat-no" title="function not covered" >function(dirList){</span></span>
+<span class="cstat-no" title="statement not covered" >					callback(dirList);</span>
+				});
+			});
+		}
+		else <span class="cstat-no" title="statement not covered" >callback({Error:{code: globalVal.unauthorized}});</span>
+	});
+};
+&nbsp;
+userCtrl.getUserInfo = <span class="fstat-no" title="function not covered" >function(userinfo, callback){</span>
+<span class="cstat-no" title="statement not covered" >	userModel.validate(userinfo, <span class="fstat-no" title="function not covered" >function(user){</span></span>
+<span class="cstat-no" title="statement not covered" >		callback(user);</span>
+	});
+};
+&nbsp;
+module.exports = userCtrl;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 04 2017 00:04:49 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

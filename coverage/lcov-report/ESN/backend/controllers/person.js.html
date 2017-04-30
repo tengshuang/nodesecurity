@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ESN/backend/controllers/person.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">ESN/backend/controllers/</a> person.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+var userModel = require('../models/user');
+var personModel = require('../models/person');
+var globalVal = require("../global");
+var nodemailer = require('nodemailer');
+&nbsp;
+var personCtrl = {};
+&nbsp;
+personCtrl.createPerson = <span class="fstat-no" title="function not covered" >function(token,person,callback) {</span>
+<span class="cstat-no" title="statement not covered" >	userModel.validate({token:token}, <span class="fstat-no" title="function not covered" >function (userInfo) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(userInfo){</span>
+<span class="cstat-no" title="statement not covered" >			personModel.createPerson(person,userInfo,<span class="fstat-no" title="function not covered" >function(res){</span></span>
+<span class="cstat-no" title="statement not covered" >			    if(res.Error){</span>
+<span class="cstat-no" title="statement not covered" >                    return callback(res);</span>
+                }
+                else{
+<span class="cstat-no" title="statement not covered" >                    personModel.formatPerson(res, <span class="fstat-no" title="function not covered" >function (formatRes) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        callback(formatRes);</span>
+                    });
+                }
+			});
+		}
+		else <span class="cstat-no" title="statement not covered" >return callback({Error:{code: globalVal.unauthorized}});</span>
+	});
+};
+&nbsp;
+personCtrl.findPerson = <span class="fstat-no" title="function not covered" >function(token,personId,callback) {</span>
+<span class="cstat-no" title="statement not covered" >    userModel.validate({token:token}, <span class="fstat-no" title="function not covered" >function (userInfo) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(userInfo){</span>
+<span class="cstat-no" title="statement not covered" >            personModel.findPerson(personId,<span class="fstat-no" title="function not covered" >function(res){</span></span>
+<span class="cstat-no" title="statement not covered" >                if(res.Error)</span>
+<span class="cstat-no" title="statement not covered" >                    return callback(res);</span>
+<span class="cstat-no" title="statement not covered" >                if(res.contactEmail) {</span>
+<span class="cstat-no" title="statement not covered" >                    var transporter = nodemailer.createTransport({</span>
+                        service: 'gmail',
+                        auth: {
+                            user: 'cmu.fse.s17.sv6@gmail.com',
+                            pass: 'love@fse'
+                        }
+                    });
+<span class="cstat-no" title="statement not covered" >                    var mailOptions = {</span>
+                        from: 'ESN Notification&lt;cmu.fse.s17.sv6@gmail.com&gt;',
+                        to: res.contactEmail,
+                        subject: userInfo.name + " has found " + res.name + "!",
+                        text: userInfo.name + " just reported that " + res.name + " has been found!",
+                        html: userInfo.name + " just reported that " + res.name + " has been found!"
+                    };
+<span class="cstat-no" title="statement not covered" >                    transporter.sendMail(mailOptions, (error, info) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                        if (error)</span>
+<span class="cstat-no" title="statement not covered" >                            return console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >                        console.log("Email sent.");</span>
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                personModel.formatPerson(res, <span class="fstat-no" title="function not covered" >function (formatRes) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    callback(formatRes);</span>
+                });
+            });
+        }
+        else <span class="cstat-no" title="statement not covered" >return callback({Error:{code: globalVal.unauthorized}});</span>
+    });
+};
+&nbsp;
+personCtrl.closePerson = <span class="fstat-no" title="function not covered" >function(token,personId,callback) {</span>
+<span class="cstat-no" title="statement not covered" >    userModel.validate({token:token}, <span class="fstat-no" title="function not covered" >function (userInfo) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(userInfo){</span>
+<span class="cstat-no" title="statement not covered" >            personModel.closePerson(userInfo._id,personId,<span class="fstat-no" title="function not covered" >function(res){</span></span>
+<span class="cstat-no" title="statement not covered" >                if(res.Error){</span>
+<span class="cstat-no" title="statement not covered" >                    return callback(res);</span>
+                }
+                else{
+<span class="cstat-no" title="statement not covered" >                    personModel.formatPerson(res,<span class="fstat-no" title="function not covered" >function (formatRes) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        callback(formatRes);</span>
+                    });
+                }
+            });
+        }
+        else <span class="cstat-no" title="statement not covered" >return callback({Error:{code: globalVal.unauthorized}});</span>
+    });
+};
+&nbsp;
+personCtrl.getAllMPCases = <span class="fstat-no" title="function not covered" >function(token, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    userModel.validate({token:token}, <span class="fstat-no" title="function not covered" >function (userInfo) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(userInfo){</span>
+<span class="cstat-no" title="statement not covered" >            personModel.getAllMPCases(<span class="fstat-no" title="function not covered" >function(caseList){</span></span>
+<span class="cstat-no" title="statement not covered" >                callback(caseList);</span>
+            });
+        }
+        else <span class="cstat-no" title="statement not covered" >return callback({Error:{code: globalVal.unauthorized}});</span>
+    });
+};
+&nbsp;
+&nbsp;
+module.exports = personCtrl;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Apr 28 2017 00:03:06 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

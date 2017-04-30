@@ -1,0 +1,41 @@
+machine:
+  environment:
+      MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+  node:
+      version: 7.4.0
+general:
+  build_dir: ESN
+
+  branches:
+    only:
+      - master
+
+dependencies:
+  pre:
+    - npm install mocha -g
+    - npm install sinon -g
+    - npm install supertest --save-dev
+    - npm install sinon
+    - npm install mocha-junit-reporter -g
+    - npm install istanbul -g
+    - npm install jshint -g
+    - npm install socket.io-client
+test:
+  override:
+    - mocha test/unit --reporter mocha-junit-reporter --timeout=10000
+    - cp unittest.istanbul.yml .istanbul.yml
+    - istanbul cover node_modules/mocha/bin/_mocha test/unit
+    - cp -r ./coverage $CIRCLE_ARTIFACTS/unit
+    - mocha test/integration --reporter mocha-junit-reporter --timeout=8000
+    - cp integration.istanbul.yml .istanbul.yml
+    - istanbul cover node_modules/mocha/bin/_mocha test/integration
+    - cp -r ./coverage $CIRCLE_ARTIFACTS/integration
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+      - cd .. && git subtree push --prefix ESN git@heroku.com:fse-esn-sv6.git master
+      - heroku run rake db:migrate --app fse-esn-sv6:
+          timeout: 4000

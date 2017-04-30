@@ -1,0 +1,18 @@
+md-toolbar(ng-controller='userProfileCtrl')
+  h2.md-toolbar-tools
+    ng-md-icon(icon="settings_applications" style="fill: #abcdef;margin-left: 0px;margin-right: 10px;") 
+    span Status & Location
+  md-content(class="md-padding", layout="column")
+    p(style="margin-top: 0px;font-size:15px") Please change your status here:
+    md-radio-group(ng-model='currentStatus')
+      md-radio-button(ng-repeat='userStatus in statusData', ng-value='userStatus.value', aria-label='{{ userStatus.title}}')
+        md-button.btn5(md-colors="{background: '{{userStatus.color}}'}" backgroud = '{{userStatus.color}}' )
+          {{userStatus.title}}
+    div(layout = "row")
+      md-button.md-primary.md-raised(style="min-width: 32px;height: 20px;")
+        ng-md-icon(icon="place")
+      md-input-container.inputMessage(flex="")
+        label Set location...
+        input(ng-model="currentLocation")
+      md-button.md-primary.md-raised.sendButton(aria-label="send" ng-click="setUserProfile(currentLocation)")
+        ng-md-icon(icon="check")

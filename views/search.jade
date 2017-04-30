@@ -1,0 +1,50 @@
+//
+   Created by wdy on 27/03/2017.
+
+
+div(style="height:100%; margin-left: 10px;" flex = '' layout = "column")
+    div(layout="row" style="margin-bottom: 0px;height: 50px;" layout-align="center end")
+        md-input-container.md-block(flex-gt-sm='' style=" margin-bottom: 0px;")
+
+            label criteria
+            md-select(ng-model='searchCriterion' )
+                md-option(ng-repeat='criterion in criteria', value='{{criterion}}' ng-selected = '$first')
+                    | {{criterion}}
+        md-input-container.hide-validation-error.inputMessage.md-block(flex='' style="margin-top: 18px; margin-bottom: 0px;")
+            label key words
+            input.hide-validation-error(ng-model="keyWords" ng-keypress="$event.keyCode == 13  && search(searchCriterion,keyWords)" )
+        md-button.md-primary.md-raised(aria-label="search" style="margin-top: 8px;height: 30px;margin-bottom: 0px;" layout="column" layout-align="end center" ng-click="search(searchCriterion,keyWords)" ng-disabled="!keyWords")
+            | search
+    h3(ng-if="!MessageList.length && !userSearch.length"  style="text-align:center")
+        | No Results
+    md-content(flex='', style="height:100%;" id="mdContent")
+        md-list
+            md-list-item.md-3-line(ng-repeat="item in MessageList" layout="row" ng-cloak)
+                md-card(md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}", md-theme-watch='' flex='')
+                    div.announcementItem(layout="column")
+                        div(layout = 'row')
+                            span.avatarWrap(style='padding-top: 5px')
+                                canvas(id="Canvas_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}") Fallback text for browsers not supporting canvas
+                            div(layout = 'column')
+                                div(layout = 'row')
+                                    md-button(style="margin-left: 0px; padding-left: 0px; padding-right: 0px; margin-bottom: 0px; margin-right: 0px; min-width:50px;height: 30px; margin-top: 0px;") {{item.name}}
+                                    md-button.btn1(ng-if="locationExist(item.location)" style="margin-top: 0px;" aria-label = "location" ng-click = "showLocation(item.location)")
+                                        ng-md-icon(icon="location_on" style="fill: #4c77d4")
+                                h5(style="margin-bottom :0px; margin-top :0px" ) {{item.date | date:'MM/dd/yyyy h:mm:ss'}}
+                        div(layout = "column")
+                            p(style="word-wrap: break-word") {{item.txt}}
+            md-list-item.md-3-line(ng-repeat='item in userSearch', ng-cloak='ng-cloak', ng-if='chooseUser')
+                span.avatarWrap
+                    canvas(id='Canvas_{{$index}}', width='50', height='50', data-jdenticon-hash='{{item.photo}}')
+                .md-list-item-text
+                    h3 {{item.name}}
+                    md-button.btn1(md-colors="{background: 'grey'}", ng-if='item.login == 0') Offline
+                    md-button.btn1(md-colors="{background: 'green'}", ng-if='item.login == 1') Online
+                    md-button.btn1(md-colors="{background: 'blue'}", ng-if='item.status == 0') Undefined
+                    md-button.btn1(md-colors="{background: 'green'}", ng-if='item.status == 1') ok
+                    md-button.btn1(md-colors="{background: 'orange'}", ng-if='item.status == 2') help
+                    md-button.btn1(md-colors="{background: 'red'}", ng-if='item.status == 3') emergency
+                md-divider(inset='')
+        div(flex = '' layout-align="center")
+            md-button.md-raised.expandMoreButton(aria-label="expandMore"  ng-click="searchMore(searchCriterion,keyWords)" ng-if="showMore")
+                ng-md-icon(icon="expand_more")

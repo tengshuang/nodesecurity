@@ -1,0 +1,95 @@
+md-dialog(style="width:400px" id="personReport")
+  md-content.md-padding(layout="column")
+    div(layout="row")
+      div(flex)
+        md-button.btn1(md-colors="{background: 'green'}", ng-if='mpInfo.status == 0') on-going
+        md-button.btn1(md-colors="{background: 'red'}", ng-if='mpInfo.status == 1') closed
+        md-button.btn1(md-colors="{background: 'blue'}", ng-if='mpInfo.find == 1') found
+    span(flex style="font-size: smaller; margin:2px") ID: {{mpInfo._id}}
+    div(layout="row" layout-align="center center")
+      span.posterHead missing
+    div(layout="row" layout-align="center center")
+      span.posterSubHead have you seen this person?
+    div(layout="row")
+      span(flex="5")
+      img(flex="47" ng-src="/{{mpInfo.photo}}" style="object-fit: contain;width: 200px;height: 200px")
+      span(flex="2")
+      div(layout="column")
+        div(layout="row")
+          span.posterDetail Name:
+          span.posterInfo {{mpInfo.name}}
+        div(layout="row")
+          span.posterDetail DOB:
+          span.posterInfo(ng-if="mpInfo.dob") {{mpInfo.dob}}
+          span.posterInfo(ng-if="!mpInfo.dob") NA
+        div(layout="row")
+          span.posterDetail Gender:
+          span.posterInfo(ng-if="mpInfo.gender") {{mpInfo.gender}}
+          span.posterInfo(ng-if="!mpInfo.gender") NA
+        div(layout="row")
+          span.posterDetail Age:
+          span.posterInfo(ng-if="mpInfo.age") {{mpInfo.age}}
+          span.posterInfo(ng-if="!mpInfo.age") NA
+        div(layout="row")
+          span.posterDetail Telephone:
+          span.posterInfo(ng-if="mpInfo.telephone") {{mpInfo.telephone}}
+          span.posterInfo(ng-if="!mpInfo.telephone") NA
+        div(layout="row")
+          span.posterDetail Skin Color:
+          span.posterInfo(ng-if="mpInfo.skinColor") {{mpInfo.skinColor}}
+          span.posterInfo(ng-if="!mpInfo.skinColor") NA
+        div(layout="row")
+          span.posterDetail Eye Color:
+          span.posterInfo(ng-if="mpInfo.eyeColor") {{mpInfo.eyeColor}}
+          span.posterInfo(ng-if="!mpInfo.eyeColor") NA
+        div(layout="row")
+          span.posterDetail Hair Color:
+          span.posterInfo(ng-if="mpInfo.hairColor") {{mpInfo.hairColor}}
+          span.posterInfo(ng-if="!mpInfo.hairColor") NA
+        div(layout="row")
+          span.posterDetail Race:
+          span.posterInfo(ng-if="mpInfo.race") {{mpInfo.race}}
+          span.posterInfo(ng-if="!mpInfo.race") NA
+        div(layout="row")
+          span.posterDetail Height:
+          span.posterInfo(ng-if="mpInfo.height") {{mpInfo.height}}
+          span.posterInfo(ng-if="!mpInfo.height") NA
+        div(layout="row")
+          span.posterDetail Weight:
+          span.posterInfo(ng-if="mpInfo.weight") {{mpInfo.weight}}
+          span.posterInfo(ng-if="!mpInfo.weight") NA
+    div(layout="row")
+      span(flex="5")
+      div(layout="column")
+        span.posterDetail(style="margin-top:10px") clothing:
+        span.posterInfo(ng-if="mpInfo.clothing") {{mpInfo.clothing}}
+        span.posterInfo(ng-if="!mpInfo.clothing") NA
+    div(layout="row")
+      span(flex="5")
+      div(layout="column")
+        span.posterDetail Address:
+        span.posterInfo(ng-if="mpInfo.Address") a{{mpInfo.Address}}
+        span.posterInfo(ng-if="!mpInfo.Address") NA
+    div(layout="row")
+      span(flex="5")
+      div(layout="column")
+        span.posterDetail Association:
+        span.posterInfo(ng-if="mpInfo.Association") {{mpInfo.Association}}
+        span.posterInfo(ng-if="!mpInfo.Association") NA
+    div(layout="row" layout-align="center center")
+      span.postFooter if you have any information
+    div(layout="row" layout-align="center center")
+      span.postFooter please contact
+    div(layout="row" layout-align="center center")
+      span.posterContact TEL:
+      span.posterContactInfo(ng-if="mpInfo.contactPhone") {{mpInfo.contactPhone}}
+      span.posterContactInfo(ng-if="!mpInfo.contactPhone") NA
+    div(layout="row" layout-align="center center")
+      span.posterContact EMAIL:
+      span.posterContactInfo(ng-if="mpInfo.contactEmail") {{mpInfo.contactEmail}}
+      span.posterContactInfo(ng-if="!mpInfo.contactEmail") NA
+    div(layout="row")
+      md-button.btn1(aria-label='Go Back',ng-click='closeCreate()' id="personReportBack") back
+      span(flex)
+      md-button.btn1(md-colors="{background: 'red'}", ng-if='mpInfo.status == 0 && currentUser["id"] == mpInfo.creator' ng-click="closeCase()") close this case
+      md-button.btn1(md-colors="{background: 'blue'}" ng-if='mpInfo.status == 0' ng-click="reportFound()") report found

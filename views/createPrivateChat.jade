@@ -1,0 +1,6 @@
+div(ng-controller='createPrivateChatCtrl')
+  div(layout='column', layout-wrap='', flex='')
+    p Do you want to char Privately with this guy?
+    div(layout='row',layout-wrap='', flex='')
+      md-button(aria-label='Go Back', ng-click='closeCreate()') Cancel
+      md-button(aria-label='Confirm', ng-click='postPrivateDir()') Create

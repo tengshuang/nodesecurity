@@ -1,0 +1,20 @@
+//
+   Created by wdy on 27/02/2017.
+
+div(style="height:100%")
+    md-sidenav.md-sidenav-groupList( flex="100",layout='column',md-is-locked-open="$mdMedia('gt-sm')" md-component-id="groupList" style="height:100%" )
+        md-toolbar.md-theme-light
+            div(layout = 'row')
+                h1.md-toolbar-tools Groups
+                md-button(id="back-btn" aria-label='back',ng-click='close()',hide-gt-sm='' style="min-width:24px")
+                    ng-md-icon(icon = "arrow_back" )
+        md-content
+            md-list
+                md-list-item(id="group-list" ng-repeat='item in GroupList', ng-click='focus_click($index)' ng-class='{focus: $index==focusIndex}'  layout = 'row')
+                    span.md-avatar(style="margin-top: 0px;")
+                        canvas(id="GroupCanvas_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}")
+                    p.capitalize(style="padding-left: 0px;margin-top: 10px;margin-bottom: 10px;") {{ item.name }}
+                    div(flex = '')
+                    div(flex = '15')
+                        ng-md-icon(icon = "notifications_active", ng-if="item.hasBeenRead == false" style = "fill: #1BB623")
+                md-divider

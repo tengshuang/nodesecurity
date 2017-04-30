@@ -1,0 +1,11 @@
+div Angular Version: {{angularLoaded}}
+div
+	label Gender:
+		input(type="text" ng-model="gender")
+div
+	label Age: 
+		input(type="text" ng-model="age")
+div
+	input(type="file" file-model="photo")
+div
+	input(type="button" ng-click="onSubmit()" value="submit (test it)")

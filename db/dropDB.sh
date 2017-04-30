@@ -1,0 +1,1 @@
+mongo FSE_ESN --eval "db.dropDatabase()"

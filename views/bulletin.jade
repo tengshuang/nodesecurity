@@ -1,0 +1,34 @@
+//
+   Created by tsh on 14/04/2017.
+
+div(style="height:100%; margin-left: 10px;" flex = '' layout = "column")
+    div(layout="row" style="margin-bottom: 0px;height: 50px;" layout-align="center end" id="bulletinHeader")
+        md-button.md-fab.md-primary(aria-label="close" style="top: 20px;right: 5px;" ng-click="closeBulletin()")
+            ng-md-icon(icon="arrow_back" style="fill: #abcdef")
+        md-input-container.hide-validation-error.inputMessage.md-block(flex='' style="margin-top: 18px; margin-bottom: 0px;")
+            label Search for missing person case(s)
+            input.hide-validation-error(ng-model="searchMPContent" ng-keypress="$event.keyCode == 13  && search(searchMPContent)" )
+        md-button.md-primary.md-raised(aria-label="search" style="margin-top: 8px;height: 30px;margin-bottom: 0px;" layout="column" layout-align="end center" ng-click="search(searchMPContent)" ng-disabled="!searchMPContent")
+            | search
+    div(layout = "row" style="margin-top:15px")
+        md-button.md-primary(id = "createNew" aria-label="createMP" ng-click="createMP()") create new case
+        md-button.md-primary(aria-label="seeAllMP" ng-click="seeAllMP()" id="seeAll") see all cases
+
+    h3(ng-if="!caseList.length"  style="text-align:center")
+        | No Results
+    md-content(flex='', style="height:100%;" id="mdContent")
+        md-list
+            md-list-item.md-3-line(ng-repeat='item in caseList', ng-cloak="")
+                span.bulletinPhoto
+                    img(ng-src="/{{item.photo}}" style="object-fit: contain; width: 80px; height: 80px")
+                .md-list-item-text
+                    div(layout="row")
+                        h3(style="margin-right: 30px") {{item.name}}
+                        h4 Age:
+                            span(ng-if="item.age") {{item.age}}
+                            span(ng-if="!item.age") NA
+                        h4(ng-if="item.gender" style="margin-left: 30px") {{item.gender}}
+                    md-button.btn1(md-colors="{background: 'green'}", ng-if='item.status == 0') on-going
+                    md-button.btn1(md-colors="{background: 'red'}", ng-if='item.status == 1') closed
+                    md-button.btn1(md-colors="{background: 'pink'}" ng-click="viewDetail(caseMap[item._id])") view details
+                md-divider(inset='')

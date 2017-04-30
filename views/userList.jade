@@ -1,0 +1,25 @@
+div(style="height:100%")
+  md-sidenav.md-sidenav-right.md-whiteframe-4dp(flex="100", layout= "column", md-is-locked-open="$mdMedia('gt-sm')", style="height:100%" md-component-id='right')
+    md-toolbar.md-theme-light(layout='row')
+      md-button(aria-label='back',ng-click='close()',hide-gt-sm='',style="min-width:24px")
+        ng-md-icon(icon = "arrow_back")
+      h1.md-toolbar-tools(style='text-align: center;', flex = '') Users
+      md-button(aria-label='add',ng-click='createGroup()' style="min-width:24px")
+        ng-md-icon(icon = "add")
+    md-content(layout-padding='')
+      md-list
+        md-list-item.md-2-line(ng-repeat='item in todos', ng-click="showConfirm($event,item.what,item.id)")
+          span
+            canvas(id="CanvasRight_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}" style='padding-top:8px;padding-right:8px;')
+          .md-list-item-text(style='margin-top:0px;margin-bottom:0px')
+            p(style="color:black") {{item.what}}
+            md-button.btn1(md-colors="{background: 'grey'}" ng-if="item.who == 0" style='margin-top:0px;margin-bottom:0px') Offline
+            md-button.btn1(md-colors="{background: 'green'}" ng-if="item.who == 1" style='margin-top:0px;margin-bottom:0px') Online
+            md-button.btn1(md-colors="{background: 'blue'}" ng-if="item.status == 0" style='margin-top:0px;margin-bottom:0px') Undefined
+            md-button.btn1(md-colors="{background: 'green'}" ng-if="item.status == 1" style='margin-top:0px;margin-bottom:0px') ok
+            md-button.btn1(md-colors="{background: 'orange'}" ng-if="item.status == 2" style='margin-top:0px;margin-bottom:0px') help
+            md-button.btn1(md-colors="{background: 'red'}" ng-if="item.status == 3" style='margin-top:0px;margin-bottom:0px') emergency
+            //md-button.btn5(md-colors="{background: 'blue'}" ng-if="true") no status
+            p
+              | {{item.notes}}
+          md-divider(inset='')

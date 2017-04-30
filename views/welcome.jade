@@ -1,0 +1,17 @@
+
+md-toolbar
+  h2.md-toolbar-tools
+    md-button.md-fab.md-primary(aria-label="Message")
+      ng-md-icon(icon="info" style="fill: #abcdef") 
+    span Welcome To ESN!
+  md-content(id="welcome" class="md-padding", layout="column")
+    p(style="margin-top: 0px;font-size:15px") There are four kinds of statuses:
+    p(style="margin-top: 0px;font-size:13px") "OK" : I am OK now, so I do not need help.
+    p(style="margin-top: 0px;font-size:13px") "help" : I need help, but it is not life threatening emergency.
+    p(style="margin-top: 0px;font-size:13px") "Emergency" : I need help because of life threatened.
+    p(style="margin-top: 0px;font-size:13px") "Undefined" : The citizen has not set his status yet. 
+    p(style="margin-top: 0px;font-size:15px") If you want to set your status: 
+    div(layout = "row")
+      p(style="margin-top: 15px;font-size:13px") click 
+      md-button.btn5(md-colors="{background: 'blue'}") no status
+      p(style="margin-top: 15px;font-size:13px") on the tool bar

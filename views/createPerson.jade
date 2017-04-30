@@ -1,0 +1,73 @@
+md-dialog(style="width:400px; height:550px" id="createPersonDialog")
+  md-toolbar
+   .md-toolbar-tools
+     md-button(aria-label='Go Back',ng-click='closeCreate()')
+       | Cancel
+     md-truncate(style='text-align: center;',flex = '')
+       ng-md-icon(icon="person_pin" size="33")
+     md-button(aria-label='Confirm',ng-click='confirmCreate()', id = "xxxxxxx" ng-disabled="!userForm.$valid || !mpInfo.photo")
+       | create
+  md-content.md-padding(flex='100')
+    form(name="userForm")
+      div(layout="row")
+        img(ng-click="onPhotoClick()" flex="50" ng-src="{{photoPreview}}" style="object-fit: contain;height:150px")
+        div(flex="50")
+          div(layout="row")
+            div(layout="column" flex)
+              md-input-container.createPerson(flex)
+                label Name
+                input(ng-model='mpInfo.name' required)
+              md-input-container.createPerson(flex)
+                label Date of Birth
+                input(ng-model='mpInfo.dob')
+              md-input-container.createPerson(flex)
+                label Gender
+                input(ng-model='mpInfo.gender' required)
+
+      div(layout = "row")
+        md-input-container.createPerson(flex)
+          label Age
+          input(ng-model='mpInfo.age')
+        md-input-container.createPerson(flex)
+          label Telephone
+          input(ng-model='mpInfo.telephone')
+
+      div(layout="row")
+        md-input-container.createPerson(flex)
+          label Skin Color
+          input(ng-model='mpInfo.skinColor')
+        md-input-container.createPerson(flex)
+          label Eye Color
+          input(ng-model='mpInfo.eyeColor')
+        md-input-container.createPerson(flex)
+          label Hair Color
+          input(ng-model='mpInfo.hairColor')
+      div(layout="row")
+        md-input-container.createPerson(flex)
+          label Race
+          input(ng-model='mpInfo.race')
+        md-input-container.createPerson(flex)
+          label Weight
+          input(ng-model='mpInfo.weight')
+        md-input-container.createPerson(flex)
+          label Height
+          input(ng-model='mpInfo.height')
+      div(flex)
+        md-input-container.createPerson(style="width:100%")
+          label Clothing
+          input(ng-model='mpInfo.clothing')
+      md-input-container.createPerson(style="width:100%")
+        label Address
+        input(ng-model='mpInfo.Address')
+      md-input-container.createPerson(style="width:100%")
+        label Association
+        input(ng-model='mpInfo.Association')
+      div(layout="row")
+        md-input-container.createPerson(flex)
+          label Contact Phone
+          input(ng-model='mpInfo.contactPhone' type="phone" required)
+        md-input-container.createPerson(flex)
+          label Contact Email
+          input(ng-model='mpInfo.contactEmail' type="email" required)
+
+input(type="file" file-model="mpInfo.photo" id="filePhoto" style="display: none" flex onchange="angular.element(this).scope().onPhotoSelected(this)")

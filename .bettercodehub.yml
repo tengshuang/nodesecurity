@@ -1,0 +1,11 @@
+exclude:
+- /ESN/db/.*
+- /ESN/app.js
+- /ESN/public/javascripts/.*
+- /ESN/routes/index.js
+- /ESN/backend/route.js
+- /ESN/backend/io.js
+component_depth: 2
+languages:
+- javascript
+- script

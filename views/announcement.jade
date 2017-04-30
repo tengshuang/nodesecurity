@@ -1,0 +1,26 @@
+// Created by wdy on 17/03/2017.
+
+
+div(style="height:100%" flex = '' layout = "column")
+    md-content(flex="",style="height:100%;" id="mdContent")
+        md-list
+            md-list-item.md-3-line(ng-repeat="item in MessageList" layout="row" ng-cloak)
+                md-card(md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}", md-theme-watch='' flex='')
+                    div.announcementItem(layout="column")
+                        div(layout = 'row')
+                            span.avatarWrap(style='padding-top: 5px')
+                                canvas(id="Canvas_{{$index}}" width="50" height="50" data-jdenticon-hash="{{item.photo}}") Fallback text for browsers not supporting canvas
+                            div(layout = 'column')
+                                div(layout = 'row')
+                                    md-button(style="margin-left: 0px; padding-left: 0px; padding-right: 0px; margin-bottom: 0px; margin-right: 0px; min-width:50px;height: 30px; margin-top: 0px;") {{item.name}}
+                                    md-button.btn1(ng-if="locationExist(item.location)" style="margin-top: 0px;" aria-label = "location" ng-click = "showLocation(item.location)")
+                                        ng-md-icon(icon="location_on" style="fill: #4c77d4")
+                                h5(style="margin-bottom :0px; margin-top :0px" ) {{item.date | date:'MM/dd/yyyy h:mm:ss'}}
+                        div(layout = "column")
+                            p(autolinker="" style="word-wrap: break-word") {{item.txt}}
+
+    div(layout="row" style="height:50px")
+        md-input-container.inputMessage(flex="")
+            input(ng-model="$parent.inputMsg" ng-keypress="$event.keyCode == 13  && sendMessage(inputMsg)")
+        md-button.md-primary.md-raised.sendButton(aria-label="send" ng-click="sendMessage($parent.inputMsg)" ng-disabled="!$parent.inputMsg")
+            ng-md-icon(icon="send")

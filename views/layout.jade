@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='shrink-to-fit=no, width=device-width, initial-scale=1, maximum-scale=1')
+    meta(name="apple-mobile-web-app-capable" content="yes")
+
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css")
+    link(rel="stylesheet", href="/stylesheets/angular-material-icons.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.10/angular.min.js")    
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.10/angular-aria.min.js")
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.10/angular-animate.min.js") 
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.js")
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.10/angular-cookies.min.js")
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js")
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js")
+
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.7.0/js/md5.min.js")
+    script(type="text/javascript",src='//cdn.jsdelivr.net/jdenticon/1.4.0/jdenticon.min.js')
+
+    script(type="text/javascript",src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js")
+
+    script(type="application/javascript",src='/javascripts/app.js')
+    script(type="application/javascript",src='/javascripts/global.js')
+
+    script(type="application/javascript",src='/javascripts/controllers/signInCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/incidentCtrl.js')
+
+    script(type="application/javascript",src='/javascripts/controllers/communityCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/userListCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/groupListCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/chatWallCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/userProfileCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/createNewGroupCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/searchCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/bulletinCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/createPrivateChatCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/testCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/createPersonCtrl.js')
+    script(type="application/javascript",src='/javascripts/controllers/personReportCtrl.js')
+
+    script(type="application/javascript",src='/javascripts/services/dialogService.js')
+    script(type="application/javascript",src='/javascripts/services/logInService.js')
+    script(type="application/javascript",src='/javascripts/services/httpService.js') 
+    script(type="application/javascript",src='/javascripts/services/apiService.js')
+    script(type="application/javascript",src='/javascripts/services/ruleService.js')
+
+
+    script(type="application/javascript",src='/javascripts/directives/autolinkDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/userListDirective.js')   
+    script(type="application/javascript",src='/javascripts/directives/groupListDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/chatWallDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/announcementDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/incidentDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/searchDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/fileModelDirective.js')
+    script(type="application/javascript",src='/javascripts/directives/bulletinDirective.js')
+  body(ng-app="MyApp" ng-cloak="")
+    div(ui-view style="height:100%")

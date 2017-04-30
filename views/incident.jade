@@ -1,0 +1,19 @@
+md-content.md-padding(layout="column" ng-controller='incidentCtrl')
+    p(style="margin-top: 0px;font-size:18px") Type:
+    md-radio-group(ng-model='currentType')
+        md-radio-button(id='incident-type' ng-repeat='type in incidentType', ng-value='type.value', aria-label='{{ type.title}}')
+            {{type.title}}
+    p(style="margin-top: 0px;font-size:18px") Location:
+    md-input-container(style="margin-top: 0px; margin-bottom: 0px")
+        input(id='incident-location' ng-model="location")
+    p(style="margin-top: 0px;font-size:18px") Severity
+    md-radio-group(ng-model='currentSType')
+        md-radio-button(id='incident-severity' ng-repeat='stype in severityType', ng-value='stype.value', aria-label='{{ stype.title}}')
+            {{stype.title}}
+    p(style="margin-top: 0px;font-size:18px") Number of People Injured:
+    md-input-container(style="margin-top: 0px; margin-bottom: 0px")
+        input(id='incident-number' ng-model="number")
+    div(layout="row" layout-align="center center")
+        md-button( id='incident-cancel' class="md-raised md-primary" ng-click="cancel($event)") Cancel
+        md-button( id='incident-submit' class="md-raised md-primary" ng-click="createIncident($event)" style="float: right;") Submit
+        div(flex)
